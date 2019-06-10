@@ -11,15 +11,16 @@
 <body>
     <h1>Get random dog images, choose numbers between 1-50</h1>
     <form>
-        <input type="number" id="getNumber" value="3" >
+        <input min="1" max="50" type="number" id="getNumber" value="3" >
         <input type="submit" id="submitButton" value="click for dog pic">
     </form>
 
     <section class="results hidden">
         <h2>Here are the dog breed(s)!</h2>
         <div class ="randompic"> </div>  
-    
+        <p id="js-error-message"></p>
     </section>
+    
     <script src="index.js"></script>
 </body>
 </html>
