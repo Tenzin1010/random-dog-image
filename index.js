@@ -3,7 +3,7 @@ let userSubmit=0;
 
 //the function uses get method to get img from the api
 function getDogImgs(limit){
-
+    $('#js-error-message').empty();
     if (limit>=1 && limit<=50) {
         let api = "https://dog.ceo/api/breeds/image/random/";
         let apiKey = api + limit;
@@ -12,13 +12,7 @@ function getDogImgs(limit){
         .then(responseJson=>displayDogImgs(responseJson,limit))
         .catch(error=>alert('Oops somethings broken.'))
      }
-     else {
-         let apiKey = "https://dog.ceo/api/breeds/image/random/3";
-         fetch(apiKey)
-        .then(response=>response.json())
-        .then(responseJson=>displayDogImgs(responseJson,3))
-        .catch(error=>alert('Oops somethings broken.'))
-     }   
+     else $('#js-error-message').text(`Please enter only numbers between 1 - 50 only`); 
 }
 
 //the func displays the response on the console
